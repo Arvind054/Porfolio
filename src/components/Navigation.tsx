@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,24 +31,28 @@ const Navigation = () => {
             Portfolio
           </div>
           
-          <div className="hidden md:flex space-x-8">
-            {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className="text-muted-foreground hover:text-primary transition-colors capitalize"
-              >
-                {item}
-              </button>
-            ))}
+          <div className="flex items-center space-x-4">
+            <div className="hidden md:flex space-x-8">
+              {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item)}
+                  className="text-muted-foreground hover:text-primary transition-colors capitalize"
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+            
+            <ThemeToggle />
+            
+            <Button 
+              onClick={() => scrollToSection('contact')}
+              className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
+            >
+              Get In Touch
+            </Button>
           </div>
-          
-          <Button 
-            onClick={() => scrollToSection('contact')}
-            className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
-          >
-            Get In Touch
-          </Button>
         </div>
       </div>
     </nav>
