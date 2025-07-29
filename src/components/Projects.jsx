@@ -18,7 +18,7 @@ const Projects = () => {
       title: "Task Management App",
       description: "A collaborative project management tool with real-time updates, team collaboration features, and advanced filtering capabilities.",
       image: "photo-1498050108023-c5249f4df085",
-      technologies: ["React", "TypeScript", "Firebase", "Material-UI"],
+      technologies: ["React", "JavaScript", "Firebase", "Material-UI"],
       liveUrl: "#",
       githubUrl: "#",
       featured: true

@@ -3,7 +3,7 @@ import { ArrowRight, Download } from 'lucide-react';
 import heroImage from '@/assets/hero-bg.jpg';
 
 const Hero = () => {
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
