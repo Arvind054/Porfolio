@@ -34,8 +34,8 @@ const About = () => {
             About <span className="text-primary">Me</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm a passionate software engineer with a strong foundation in modern web technologies 
-            and a keen eye for user experience.
+            I'm Arvind Choudhary, a passionate B.Tech student at IIIT Trichy with expertise in 
+            full-stack development and AI integration, currently working as a Full-Stack Developer Intern.
           </p>
         </div>
 
@@ -55,22 +55,20 @@ const About = () => {
             <h3 className="text-2xl font-bold mb-6 text-foreground">My Journey</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                With several years of experience in software development, I've worked on 
-                diverse projects ranging from small business websites to large-scale enterprise 
-                applications. My journey began with a curiosity about how things work, 
-                which led me to pursue computer science and develop a passion for creating 
-                digital solutions.
+                Currently pursuing B.Tech in Electronics and Communication Engineering at IIIT Trichy 
+                with a CGPA of 8.59/10.0. I'm working as a Full-Stack Developer Intern at ShikshaSathi, 
+                where I develop optimized RESTful APIs using Node.js, Express.js, and MongoDB, and build 
+                responsive UIs with React.js and Tailwind CSS.
               </p>
               <p>
-                I believe in continuous learning and staying up-to-date with the latest 
-                technologies and best practices. Whether it's mastering a new framework 
-                or improving development processes, I'm always looking for ways to grow 
-                and deliver better results.
+                My expertise spans across modern web technologies including the MERN stack, and I'm particularly 
+                passionate about AI integration in web applications. I've successfully integrated Google Gemini API 
+                in multiple projects and have experience with LangChain and prompt engineering.
               </p>
               <p>
-                When I'm not coding, you can find me contributing to open-source projects, 
-                reading tech blogs, or exploring new technologies that could enhance my 
-                development toolkit.
+                I'm an active competitive programmer with a Knight rating (1935) on LeetCode, ranking in the 
+                top 3% globally with 800+ solved problems. I've also achieved 3-Star rating on CodeChef and 
+                participate regularly in hackathons including Smart India Hackathon and Build With India.
               </p>
             </div>
           </div>

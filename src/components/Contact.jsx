@@ -9,19 +9,19 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       label: "Email",
-      value: "hello@yourname.com",
-      link: "mailto:hello@yourname.com"
+      value: "arvindchoudhary054@gmail.com",
+      link: "mailto:arvindchoudhary054@gmail.com"
     },
     {
       icon: <Phone className="h-6 w-6" />,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+91 6378652834",
+      link: "tel:+916378652834"
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Jaipur, India",
       link: "#"
     }
   ];
@@ -52,8 +52,8 @@ const Contact = () => {
             Get In <span className="text-primary">Touch</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm always interested in hearing about new opportunities and exciting projects. 
-            Let's discuss how we can work together.
+            I'm always excited to discuss new opportunities, collaborate on interesting projects, 
+            or chat about technology and AI. Feel free to reach out!
           </p>
         </div>
 

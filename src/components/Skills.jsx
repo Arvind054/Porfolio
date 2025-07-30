@@ -4,32 +4,32 @@ import { Badge } from '@/components/ui/badge';
 const Skills = () => {
   const skillCategories = [
     {
+      title: "Programming",
+      skills: ["JavaScript", "Python", "C/C++", "Data Structures & Algorithms"],
+      icon: "💻"
+    },
+    {
       title: "Frontend",
-      skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Next.js", "Vue.js"],
+      skills: ["React.js", "Redux", "HTML5", "CSS3", "Tailwind CSS", "Responsive Design"],
       icon: "🎨"
     },
     {
       title: "Backend",
-      skills: ["Node.js", "Python", "Express.js", "REST APIs", "GraphQL", "MongoDB", "PostgreSQL", "Redis"],
+      skills: ["Node.js", "Express.js", "MongoDB", "SQL", "JWT", "RESTful APIs", "Socket.IO"],
       icon: "⚙️"
     },
     {
-      title: "Tools & Technologies",
-      skills: ["Git", "Docker", "AWS", "Vercel", "VS Code", "Figma", "Jest", "Cypress"],
-      icon: "🛠️"
-    },
-    {
-      title: "Soft Skills",
-      skills: ["Problem Solving", "Team Collaboration", "Communication", "Project Management", "Agile", "Code Review"],
-      icon: "🧠"
+      title: "AI/ML & Tools",
+      skills: ["Google Gemini API", "LangChain", "Prompt Engineering", "OAuth 2.0", "Git", "Chrome Extensions"],
+      icon: "🤖"
     }
   ];
 
   const experience = [
-    { label: "Years of Experience", value: "3+" },
-    { label: "Projects Completed", value: "50+" },
-    { label: "Technologies Mastered", value: "20+" },
-    { label: "Code Reviews", value: "200+" }
+    { label: "LeetCode Problems", value: "800+" },
+    { label: "LeetCode Rating", value: "1935" },
+    { label: "Global Rank", value: "Top 3%" },
+    { label: "Hackathons", value: "10+" }
   ];
 
   return (

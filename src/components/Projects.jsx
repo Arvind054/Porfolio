@@ -6,40 +6,34 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built with modern web technologies for optimal performance.",
+      title: "MindFlow.AI",
+      description: "A powerful tool for creating customizable mind maps using Google Gemini API with advanced features like React Flow integration, OAuth 2.0 authentication, and PDF export capabilities.",
       image: "photo-1460925895917-afdab827c52f",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe API", "Tailwind CSS"],
+      technologies: ["React.js", "Google Gemini API", "React Flow", "OAuth 2.0", "PDF Export"],
       liveUrl: "#",
       githubUrl: "#",
-      featured: true
+      featured: true,
+      date: "July 2025"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative project management tool with real-time updates, team collaboration features, and advanced filtering capabilities.",
+      title: "LeetAssist Chrome Extension",
+      description: "An intelligent Chrome extension for LeetCode that provides AI-driven code hints, error detection, and follow-up question generation to improve coding efficiency and learning.",
       image: "photo-1498050108023-c5249f4df085",
-      technologies: ["React", "JavaScript", "Firebase", "Material-UI"],
+      technologies: ["Chrome Extension APIs", "JavaScript", "AI Integration", "DOM Manipulation"],
       liveUrl: "#",
       githubUrl: "#",
-      featured: true
+      featured: true,
+      date: "July 2025"
     },
     {
-      title: "Weather Dashboard",
-      description: "A responsive weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
+      title: "AI Traveling Agent",
+      description: "Comprehensive AI travel planner built with MERN stack and Google Gemini API, featuring intelligent trip planning, real-time suggestions, and seamless user authentication.",
       image: "photo-1461749280684-dccba630e2f6",
-      technologies: ["Vue.js", "API Integration", "Chart.js", "CSS3"],
+      technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Google Gemini API", "OAuth 2.0"],
       liveUrl: "#",
       githubUrl: "#",
-      featured: false
-    },
-    {
-      title: "Portfolio Website",
-      description: "A modern, responsive portfolio website showcasing projects and skills with smooth animations and optimal performance.",
-      image: "photo-1487058792275-0ad4aaf24ca7",
-      technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false
+      featured: false,
+      date: "June 2025"
     }
   ];
 
@@ -74,11 +68,9 @@ const Projects = () => {
                   <CardHeader className="p-0 mb-4">
                     <div className="flex items-center justify-between mb-2">
                       <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
-                      {project.featured && (
-                        <Badge variant="outline" className="text-primary border-primary">
-                          Featured
-                        </Badge>
-                      )}
+                      <Badge variant="outline" className="text-primary border-primary text-xs">
+                        {project.date}
+                      </Badge>
                     </div>
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       {project.description}

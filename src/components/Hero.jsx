@@ -23,22 +23,21 @@ const Hero = () => {
         <div className="max-w-3xl">
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-              👋 Welcome to my portfolio
+              👋 Hello, I'm Arvind Choudhary
             </span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-foreground">I'm a</span>
+            <span className="text-foreground">Full-Stack</span>
             <br />
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Software Engineer
+              Developer & AI Enthusiast
             </span>
           </h1>
           
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
-            Passionate about crafting elegant solutions to complex problems. 
-            I specialize in building scalable web applications with modern technologies 
-            and clean, maintainable code.
+            B.Tech student at IIIT Trichy specializing in modern web technologies and AI integration. 
+            Building scalable applications with React.js, Node.js, and cutting-edge AI tools like Google Gemini API.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
