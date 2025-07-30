@@ -1,7 +1,36 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { Code, Lightbulb, Rocket, Users } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Code, Lightbulb, Rocket, Users, Upload, User } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
 
 const About = () => {
+  const [profilePhoto, setProfilePhoto] = useState(null);
+  const fileInputRef = useRef(null);
+
+  const handlePhotoUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setProfilePhoto(e.target.result);
+        localStorage.setItem('profilePhoto', e.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  // Load saved photo on component mount
+  useEffect(() => {
+    const savedPhoto = localStorage.getItem('profilePhoto');
+    if (savedPhoto) {
+      setProfilePhoto(savedPhoto);
+    }
+  }, []);
+
   const features = [
     {
       icon: <Code className="h-8 w-8 text-primary" />,
@@ -36,6 +65,42 @@ const About = () => {
             I'm a passionate software engineer with a strong foundation in modern web technologies 
             and a keen eye for user experience.
           </p>
+        </div>
+
+        {/* Profile Photo Upload Section */}
+        <div className="flex justify-center mb-16">
+          <div className="text-center">
+            <div className="relative inline-block">
+              <div className="w-32 h-32 rounded-full border-4 border-primary/20 overflow-hidden bg-muted flex items-center justify-center">
+                {profilePhoto ? (
+                  <img 
+                    src={profilePhoto} 
+                    alt="Profile" 
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <User className="w-16 h-16 text-muted-foreground" />
+                )}
+              </div>
+              <Button
+                onClick={handleUploadClick}
+                size="sm"
+                className="absolute -bottom-2 -right-2 rounded-full w-10 h-10 p-0"
+              >
+                <Upload className="w-4 h-4" />
+              </Button>
+            </div>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Click the + button to upload your photo
+            </p>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              onChange={handlePhotoUpload}
+              className="hidden"
+            />
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
