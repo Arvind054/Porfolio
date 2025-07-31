@@ -1,6 +1,8 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-
+import LeetCodePNG from '../assets/LeetCodePNG.png';
+import CodeChefPNG from '../assets/CodeChefPNG.png';
+import CodeForcesLogo from '../assets/CodeForcesLogo.png';
 const Skills = () => {
   const skillCategories = [
     {
@@ -10,26 +12,26 @@ const Skills = () => {
     },
     {
       title: "Frontend",
-      skills: ["React.js", "Redux", "HTML5", "CSS3", "Tailwind CSS", "Responsive Design"],
+      skills: ["React.js", "Redux", "HTML5", "CSS3", "Tailwind CSS", "Responsive Design", "UI/UX"],
       icon: "🎨"
     },
     {
       title: "Backend",
-      skills: ["Node.js", "Express.js", "MongoDB", "SQL", "JWT", "RESTful APIs", "Socket.IO"],
+      skills: ["Node.js", "Express.js", "MongoDB", "SQL", "JWT", "RESTful APIs", "Socket.IO", "oAuth2.0"],
       icon: "⚙️"
     },
     {
       title: "AI/ML & Tools",
-      skills: ["Google Gemini API", "LangChain", "Prompt Engineering", "OAuth 2.0", "Git", "Chrome Extensions"],
+      skills: ["AI Integration", "LangChain", "Prompt Engineering", "AI Agents", "AI Workflow Design", "Git/Github"],
       icon: "🤖"
     }
   ];
 
   const experience = [
-    { label: "LeetCode Problems", value: "800+" },
-    { label: "LeetCode Rating", value: "1935" },
-    { label: "Global Rank", value: "Top 3%" },
-    { label: "Hackathons", value: "10+" }
+    { label: "LeetCode", value: "Knight(1950+)", logo:LeetCodePNG, url:"https://leetcode.com/u/ArvindChoudhary054/" },
+    { label: "Codechef", value: "3⭐ (1675+)", logo: CodeChefPNG, url:"https://www.codechef.com/users/arvind_054" },
+    { label: "CodeForces", value: " Pupil(1375+)", logo:CodeForcesLogo, url:"https://codeforces.com/profile/arvindchoudhary054" },
+    { label: "Hackathons Participated", value: "10+", url: "https://drive.google.com/drive/folders/1NX96E2O7LlFZzCOSrq1ufmHvF8WfF1-8?usp=sharing" }
   ];
 
   return (
@@ -48,9 +50,10 @@ const Skills = () => {
         {/* Experience Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {experience.map((stat, index) => (
-            <Card key={index} className="text-center p-6 bg-gradient-to-br from-card to-primary/5">
+            <Card key={index} className="text-center p-6 bg-gradient-to-br from-card to-primary/5 cursor-pointer hover:-translate-y-1 transition-all duration-300" onClick = {()=> window.open(stat.url, "_blank")}>
               <CardContent className="p-0">
-                <div className="text-3xl font-bold text-primary mb-2">{stat.value}</div>
+                <div className="text-3xl font-bold text-primary mb-2 flex items-center justify-center">
+                  <img src={stat.logo} alt="" />{stat.value}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </CardContent>
             </Card>

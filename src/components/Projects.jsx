@@ -2,9 +2,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github } from 'lucide-react';
-import MindFlowPicture from '../assets/MindFlowPicture.png'
-import LeetAssistPicture  from '../assets/LeetAssistPicture.png'
-import AiTravelImage from '../assets/AiTravelImage.png'
+import MindFlowPicture from '../assets/MindFlowPicture.png';
+import LeetAssistPicture from '../assets/LeetAssistPicture.png';
+import AiTravelImage from '../assets/AiTravelImage.png';
 
 const Projects = () => {
   const projects = [
@@ -53,61 +53,63 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        {/* Horizontal Scroll Row */}
+        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory justify-evenly flex-wrap">
           {projects.map((project, index) => (
-            <Card key={index} className={`group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden ${
-              project.featured ? 'lg:col-span-2' : ''
-            }`}>
-              <div className={`flex ${project.featured ? 'flex-col lg:flex-row' : 'flex-col'}`}>
-                <div className={`${project.featured ? 'lg:w-1/2' : 'w-full'} overflow-hidden`}>
-                  <img 
-                    src={project.image}
-                    alt={project.title}
-                    className="w-[75] h-[75%] object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                
-                <div className={`${project.featured ? 'lg:w-1/2' : 'w-full'} p-6`}>
-                  <CardHeader className="p-0 mb-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
-                      <Badge variant="outline" className="text-primary border-primary text-xs">
-                        {project.date}
+            <Card
+              key={index}
+              className="min-w-[350px] max-w-[350px] flex-shrink-0 snap-center shadow-md hover:shadow-xl transition-all duration-300 "
+            >
+              <img 
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+              />
+              <div className="p-6">
+                <CardHeader className="p-0 mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <CardTitle className="text-lg font-semibold">{project.title}</CardTitle>
+                    <Badge variant="outline" className="text-primary border-primary text-xs">
+                      {project.date}
+                    </Badge>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-4">
+                    {project.description}
+                  </p>
+                </CardHeader>
+
+                <CardContent className="p-0 mt-4">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, techIndex) => (
+                      <Badge key={techIndex} variant="secondary" className="text-xs">
+                        {tech}
                       </Badge>
-                    </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {project.description}
-                    </p>
-                  </CardHeader>
-                  
-                  <CardContent className="p-0">
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="secondary" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                    
-                    <div className="flex gap-3">
-                      <Button size="sm" className="flex-1" onClick={() => window.open(`${project.liveUrl}`, '_blank')}>
-                        <ExternalLink className="mr-2 h-4 w-4"/>
-                        Live Demo
-                      </Button>
-                      <Button variant="outline" size="sm" className="flex-1" onClick={() => window.open(`${project.githubUrl}`, '_blank')}>
-                        <Github className="mr-2 h-4 w-4" />
-                        Code
-                      </Button>
-                    </div>
-                  </CardContent>
-                </div>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-2">
+                    <Button size="sm" className="flex-1 flex rounded-md" onClick={() => window.open(project.liveUrl, '_blank')}>
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live
+                    </Button>
+                    <Button variant="outline" size="sm" className="p-1 flex-1 flex rounded-md border border-white" onClick={() => window.open(project.githubUrl, '_blank')}>
+                      <Github className="mr-2 h-4 w-4" />
+                      Code
+                    </Button>
+                  </div>
+                </CardContent>
               </div>
             </Card>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="border-primary hover:bg-primary hover:text-primary-foreground" onClick = {()=>window.open("https://github.com/Arvind054", '_blank')}>
+          <Button
+            variant="outline"
+            size="lg"
+            className="border-primary hover:bg-primary hover:text-primary-foreground"
+            onClick={() => window.open("https://github.com/Arvind054", '_blank')}
+          >
             View All Projects
           </Button>
         </div>

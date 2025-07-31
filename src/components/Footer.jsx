@@ -8,7 +8,7 @@ const Footer = () => {
             Building the future, one line of code at a time.
           </p>
           <div className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} All rights reserved. Made with ❤️ using React & JavaScript.
+            © {new Date().getFullYear()} All rights reserved. Made with ❤️ By Arvind Choudhary.
           </div>
         </div>
       </div>

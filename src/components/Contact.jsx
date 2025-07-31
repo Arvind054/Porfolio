@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from 'lucide-react';
+import { useState } from 'react';
 
 const Contact = () => {
   const contactInfo = [
@@ -44,6 +45,36 @@ const Contact = () => {
     }
   ];
 
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const handleSubmit = async()=>{
+    const formData = new FormData();
+  formData.append("firstName", firstName);
+  formData.append("lastName", lastName);
+  formData.append("email", email);
+  formData.append("subject", subject);
+  formData.append("message", message);
+  formData.append("access_key", import.meta.env.VITE_WEB3_FORMS_KEY);
+    
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+    const data = await response.json();
+    if (data.success) {
+      setFirstName('');
+      setLastName('');
+      setEmail('');
+      setSubject('');
+      setMessage('');
+      console.log("SUccess");
+    } else {
+      console.log("Error", data);
+    }
+  }
   return (
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -105,19 +136,19 @@ const Contact = () => {
               <CardTitle>Send Me a Message</CardTitle>
             </CardHeader>
             <CardContent>
-              <form className="space-y-6">
+              <div className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">
                       First Name
                     </label>
-                    <Input placeholder="John" />
+                    <Input placeholder="Arvind" className="p-1"  value={firstName} onChange = {(e)=>setFirstName(e.target.value)}/>
                   </div>
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">
                       Last Name
                     </label>
-                    <Input placeholder="Doe" />
+                    <Input placeholder="Choudhary" className="p-1" value={lastName} onChange={(e)=>setLastName(e.target.value)}/>
                   </div>
                 </div>
                 
@@ -125,14 +156,14 @@ const Contact = () => {
                   <label className="text-sm font-medium text-foreground mb-2 block">
                     Email
                   </label>
-                  <Input type="email" placeholder="john@example.com" />
+                  <Input type="email" placeholder="email@example.com"className="p-1" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                 </div>
                 
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">
                     Subject
                   </label>
-                  <Input placeholder="Project Collaboration" />
+                  <Input placeholder="Get In Touch" className="p-1" value = {subject} onChange={(e)=>setSubject(e.target.value)}/>
                 </div>
                 
                 <div>
@@ -140,18 +171,20 @@ const Contact = () => {
                     Message
                   </label>
                   <Textarea 
-                    placeholder="Tell me about your project..." 
-                    className="min-h-[120px]"
+                    placeholder="Text here.." 
+                    className="min-h-[120px] p-1"
+                    value = {message}
+                    onChange={(e)=>setMessage(e.target.value)}
                   />
                 </div>
                 
                 <Button 
-                  type="submit" 
                   className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
+                  onClick= {handleSubmit}
                 >
                   Send Message
                 </Button>
-              </form>
+              </div>
             </CardContent>
           </Card>
         </div>
