@@ -2,37 +2,40 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github } from 'lucide-react';
+import MindFlowPicture from '../assets/MindFlowPicture.png'
+import LeetAssistPicture  from '../assets/LeetAssistPicture.png'
+import AiTravelImage from '../assets/AiTravelImage.png'
 
 const Projects = () => {
   const projects = [
     {
       title: "MindFlow.AI",
       description: "A powerful tool for creating customizable mind maps using Google Gemini API with advanced features like React Flow integration, OAuth 2.0 authentication, and PDF export capabilities.",
-      image: "photo-1460925895917-afdab827c52f",
+      image: MindFlowPicture,
       technologies: ["React.js", "Google Gemini API", "React Flow", "OAuth 2.0", "PDF Export"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://mind-flowai.vercel.app/",
+      githubUrl: "https://github.com/Arvind054/MindFlow",
       featured: true,
       date: "July 2025"
     },
     {
       title: "LeetAssist Chrome Extension",
       description: "An intelligent Chrome extension for LeetCode that provides AI-driven code hints, error detection, and follow-up question generation to improve coding efficiency and learning.",
-      image: "photo-1498050108023-c5249f4df085",
+      image: LeetAssistPicture,
       technologies: ["Chrome Extension APIs", "JavaScript", "AI Integration", "DOM Manipulation"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://github.com/Arvind054/LeetAssist",
+      githubUrl: "https://github.com/Arvind054/LeetAssist",
       featured: true,
       date: "July 2025"
     },
     {
       title: "AI Traveling Agent",
       description: "Comprehensive AI travel planner built with MERN stack and Google Gemini API, featuring intelligent trip planning, real-time suggestions, and seamless user authentication.",
-      image: "photo-1461749280684-dccba630e2f6",
+      image: AiTravelImage,
       technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Google Gemini API", "OAuth 2.0"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
+      liveUrl: "https://ai-travel-agent-ljkh.vercel.app/",
+      githubUrl: "https://github.com/Arvind054/AI_Travel_Agent",
+      featured: true,
       date: "June 2025"
     }
   ];
@@ -58,9 +61,9 @@ const Projects = () => {
               <div className={`flex ${project.featured ? 'flex-col lg:flex-row' : 'flex-col'}`}>
                 <div className={`${project.featured ? 'lg:w-1/2' : 'w-full'} overflow-hidden`}>
                   <img 
-                    src={`https://images.unsplash.com/${project.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80`}
+                    src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-[75] h-[75%] object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 
@@ -87,11 +90,11 @@ const Projects = () => {
                     </div>
                     
                     <div className="flex gap-3">
-                      <Button size="sm" className="flex-1">
-                        <ExternalLink className="mr-2 h-4 w-4" />
+                      <Button size="sm" className="flex-1" onClick={() => window.open(`${project.liveUrl}`, '_blank')}>
+                        <ExternalLink className="mr-2 h-4 w-4"/>
                         Live Demo
                       </Button>
-                      <Button variant="outline" size="sm" className="flex-1">
+                      <Button variant="outline" size="sm" className="flex-1" onClick={() => window.open(`${project.githubUrl}`, '_blank')}>
                         <Github className="mr-2 h-4 w-4" />
                         Code
                       </Button>
@@ -104,7 +107,7 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="border-primary hover:bg-primary hover:text-primary-foreground">
+          <Button variant="outline" size="lg" className="border-primary hover:bg-primary hover:text-primary-foreground" onClick = {()=>window.open("https://github.com/Arvind054", '_blank')}>
             View All Projects
           </Button>
         </div>

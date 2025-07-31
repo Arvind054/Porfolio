@@ -28,7 +28,7 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-foreground">Full-Stack</span>
+            <span className="text-foreground">Software</span>
             <br />
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Developer & AI Enthusiast
@@ -37,7 +37,7 @@ const Hero = () => {
           
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
             B.Tech student at IIIT Trichy specializing in modern web technologies and AI integration. 
-            Building scalable applications with React.js, Node.js, and cutting-edge AI tools like Google Gemini API.
+            Building scalable applications with React.js, Node.js, and cutting-edge AI tools.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">

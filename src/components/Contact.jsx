@@ -30,17 +30,17 @@ const Contact = () => {
     {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",
-      url: "https://github.com"
+      url: "https://github.com/Arvind054"
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/arvindchoudhary054/"
     },
     {
       icon: <Twitter className="h-5 w-5" />,
       label: "Twitter",
-      url: "https://twitter.com"
+      url: "https://x.com/Arvind637865"
     }
   ];
 

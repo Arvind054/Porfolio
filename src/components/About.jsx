@@ -35,8 +35,7 @@ const About = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             I'm Arvind Choudhary, a passionate B.Tech student at IIIT Trichy with expertise in 
-            full-stack development and AI integration, currently working as a Full-Stack Developer Intern.
-          </p>
+            Software Development and AI integration.          </p>
         </div>
 
         {/* Profile Photo Section */}
